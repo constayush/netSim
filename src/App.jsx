@@ -289,6 +289,9 @@ The browser processes the response and shows the webpage, an error, or other con
 
         </div>
 
+
+        <h1 className="w-full flex justify-center items-center gap-1 mb-10 text-stone-300">made with ❣️ by <a href="https://constayush.vercel.app/" className="text-stone-200" target="_blank">  Ayush</a> </h1>
+
       </div>
     </>
   );
