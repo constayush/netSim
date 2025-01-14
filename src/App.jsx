@@ -149,7 +149,7 @@ function App() {
         </div>
 
         {/* Configuration Section */}
-        <div className="w-full flex flex-col justify-center items-center px-4 sm:px-8">
+        <div className="w-full flex flex-col justify-center items-center mt-16 px-4 sm:px-8">
           <div className="max-w-6xl flex flex-col justify-center items-center gap-6">
             <div className="flex justify-between items-center w-full">
               <h1 className="text-3xl my-4">Config your HTTP request</h1>
