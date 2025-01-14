@@ -96,7 +96,7 @@ function App() {
         </div>
 
         {/* Animation Section */}
-        <div className="animate-section flex flex-col sm:flex-row justify-around items-center my-4 px-4 sm:px-8">
+        <div className="animate-section flex flex-col sm:flex-row justify-around items-center gap-8 my-4  sm:px-8">
           {/* Client */}
           <motion.img
             src={clientIcon}
@@ -111,8 +111,12 @@ function App() {
           {isRequestSent && (
             <motion.div
               className="bg-blue-500 absolute z-10 text-white px-4 py-2 rounded-full text-sm sm:text-base"
-              initial={{ x: -150, opacity: 0 }}
-              animate={{ x: 100, opacity: 1 }}
+              initial={{ opacity: 0, x: -150 }}
+              animate={{
+                opacity: 1,
+                x: window.innerWidth > 640 ? 100 : 0, 
+                y: window.innerWidth <= 640 ? 100 : 0,
+              }}
               transition={{ duration: 1 }}
             >
               Sending Request...to server
@@ -134,7 +138,9 @@ function App() {
             <motion.div
               className="bg-black border-dashed border absolute text-white px-4 py-2 rounded-full text-sm sm:text-base"
               initial={{ x: 100, opacity: 0 }}
-              animate={{ x: -150, opacity: 1 }}
+              animate={{  opacity: 1,
+                x: window.innerWidth > 640 ? -100 : 0, 
+                y: window.innerWidth <= 640 ? -100 : 0, }}
               transition={{ duration: 1 }}
             >
               {response.body}
@@ -282,7 +288,7 @@ function App() {
               para2="and then in the end we have body - which contains the requested data, it can be an HTML page, JSON, XML, etc."
 
             />
-            
+
             <BlogPara
               ques="Behind the scenes mechanisms of http" ans="http have many underlying tech that makes it possible"
 
