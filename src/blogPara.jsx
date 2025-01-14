@@ -1,4 +1,4 @@
-function BlogPara({ques, ans, analogy, con}:any) {
+function BlogPara({ques, ans, analogy, con, img}) {
   return (
     <div className="p-4">
     <h1 className="text-4xl mb-2">{ques}</h1>

@@ -4,6 +4,7 @@ import serverIcon from "../public/server.svg";
 // import settingIcon from "../public/settingIcon.svg";
 import { motion } from "framer-motion";
 import BlogPara from "./blogPara";
+import clientServerIcon from "../public/client-server.svg";
 
 function App() {
   const [request, setRequest] = useState("");
@@ -13,13 +14,13 @@ function App() {
     "Accept-lang": "en-US",
     "User-Agent": " Mozilla/5.0 Windows",
   });
-  const [response, setResponse]: any = useState("");
+  const [response, setResponse] = useState("");
   const [showConfig, setShowConfig] = useState("flex");
   const [isRequestSent, setIsRequestSent] = useState(false);
 
-if(true) {
-  
-}else{setShowConfig}
+  if (true) {
+
+  } else { setShowConfig }
 
   const handleSendRequest = () => {
     // Simulate a server response
@@ -50,7 +51,7 @@ if(true) {
     }
   };
 
-  const handleHeaderChange = (key: string, value: string) => {
+  const handleHeaderChange = (key, value) => {
 
     setHeaders((prev) => ({
       ...prev,
@@ -103,7 +104,7 @@ if(true) {
             src={clientIcon}
             className="w-[10rem] border p-4"
             alt="Client"
-            initial={{ opacity: 0, x: -80 }}
+            initial={{ opacity: 0, x: -150 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           />
@@ -112,11 +113,11 @@ if(true) {
           {isRequestSent && (
             <motion.div
               className="bg-blue-500 absolute z-10 text-white px-4 py-2 rounded-full"
-              initial={{ x: -80, opacity: 0 }}
-              animate={{ x: 50, opacity: 1 }}
+              initial={{ x: -150, opacity: 0 }}
+              animate={{ x: 100, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              Sending Request...
+              Sending Request...to server
             </motion.div>
           )}
 
@@ -254,33 +255,37 @@ if(true) {
           <div className="max-w-[64rem] min-h-[20rem] text-left ">
 
             <BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
-
 You (the browser) ask the librarian (the website server) for a book (a webpage).
 You send a request: “Can I have the book on cats?” (HTTP request).
 The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information." />
 
-            <BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
+            <BlogPara ques="How does http communication work? " ans="HTTP communication works through a request-response model, where a client (e.g., your web browser) talks to a server"
 
+              analogy="
+              #1 Client Makes a Request When you type a URL (e.g., https://example.com) or click a link: 
+              The browser (client) sends a request to the server.
+              The request includes:
+              Method: What action to take (e.g., GET to fetch data or POST to send data).
+              URL path: What resource is being requested (e.g., /home or /about).
+              Headers: Extra details like supported formats, language preferences, or authentication tokens."
+
+              img={clientServerIcon}
+
+              con="It’s that simple! HTTP is just the system they use to understand each other and exchange information." />
+
+            <BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
 You (the browser) ask the librarian (the website server) for a book (a webpage).
 You send a request: “Can I have the book on cats?” (HTTP request).
 The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information." />
 
-            <BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
 
+            <BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
 You (the browser) ask the librarian (the website server) for a book (a webpage).
 You send a request: “Can I have the book on cats?” (HTTP request).
 The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information." />
 
 
             <BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
-
-You (the browser) ask the librarian (the website server) for a book (a webpage).
-You send a request: “Can I have the book on cats?” (HTTP request).
-The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information." />
-
-
-            <BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
-
 You (the browser) ask the librarian (the website server) for a book (a webpage).
 You send a request: “Can I have the book on cats?” (HTTP request).
 The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information." />
