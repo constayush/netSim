@@ -14,7 +14,7 @@ function App() {
     "User-Agent": " Mozilla/5.0 Windows",
   });
   const [response, setResponse]: any = useState("");
-  // const [showConfig, setShowConfig] = useState("flex");
+  const [showConfig, setShowConfig] = useState("flex");
   const [isRequestSent, setIsRequestSent] = useState(false);
 
 
