@@ -1,7 +1,7 @@
 import { useState } from "react";
 import clientIcon from "../public/clientsvg.svg";
 import serverIcon from "../public/server.svg";
-// import settingIcon from "../public/settingIcon.svg";
+import settingIcon from "../public/settingIcon.svg";
 import { motion } from "framer-motion";
 import BlogPara from "./blogPara";
 import clientServerIcon from "../public/client-server.svg";
@@ -27,7 +27,7 @@ function App() {
     if (request) {
 
       setIsRequestSent(true)
-
+      setResponse(false)
 
       setTimeout(() => {
         setIsRequestSent(false)
@@ -73,12 +73,12 @@ function App() {
   };
 
 
-  // const handleConfigClick = () => {
+  const handleConfigClick = () => {
 
-  //   if (showConfig === "hidden") setShowConfig("flex")
-  //   else setShowConfig("hidden");
+    if (showConfig === "hidden") setShowConfig("flex")
+    else setShowConfig("hidden");
 
-  // }
+  }
 
 
 
@@ -135,8 +135,8 @@ function App() {
           {response && (
             <motion.div
               className="bg-black border-dashed border absolute text-white px-4 py-2 rounded-full"
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: -50, opacity: 1 }}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: -150, opacity: 1 }}
               transition={{ duration: 1 }}
             >
               {response.body}
@@ -150,9 +150,13 @@ function App() {
         <div className="w-full flex  justify-center items-center">
           <div className="max-w-6xl flex flex-col justify-center items-center ">
 
-            <h1 className="text-4xl my-[4rem] w-full flex  justify-left items-center">Config your HTTP rquest</h1>
+            <div className="flex justify-center items-center gap-4">
+              <h1 className="text-3xl my-[4rem] w-full flex  justify-left items-center">Config your HTTP request</h1>
+              <button onClick={handleConfigClick} className=" "><img className="w-9 hover:rotate-45 transition-transform " src={settingIcon} /></button>
+            </div>
 
-            <div className="msg-section w-full flex flex-col flex-wrap justify-center items-center gap-5 sm:gap-8 ">
+
+            <div className={`msg-section w-full ${showConfig} flex-col flex-wrap justify-center items-center gap-5 sm:gap-8 `}>
 
               <div className={`req-input-main-line w-full flex flex-col justify-center items-center `}>
 
@@ -187,7 +191,7 @@ function App() {
               <div className={`request-response grid grid-cols-1 sm:grid-cols-2 gap-4`}>
 
 
-                <div className={`req-headers ${showConfig}  flex-col p-4 w-full border  gap-2 rounded grad text-white`}>
+                <div className={`req-headers flex  flex-col p-4 w-full border  gap-2 rounded grad text-white`}>
                   <h3 className="text-lg mb-2">Request Headers</h3>
 
                   {Object.keys(headers).map((key) => (
@@ -275,9 +279,9 @@ The browser processes the response and shows the webpage, an error, or other con
 
               img={clientServerIcon}
 
-              con="This request-response cycle is how clients and servers communicate using HTTP! Would you like more technical details or practical examples?" />
+              con="This request-response cycle is how clients and servers communicate using HTTP!" />
 
-    
+
 
 
           </div>

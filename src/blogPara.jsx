@@ -1,7 +1,7 @@
 function BlogPara({ques, ans, analogy, con, img}) {
   return (
-    <div className="p-2">
-    <h1 className="text-4xl mb-2">{ques}</h1>
+    <div className="p-2 mb-8">
+    <h1 className="text-4xl mb-8">{ques}</h1>
 
     <div className="w-full  bg-[#090909cb] text-stone-300 p-4">
     <p className="w-full text-lg p-2 rounded-lg sha">{ans}</p>
