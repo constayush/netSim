@@ -17,6 +17,9 @@ function App() {
   const [showConfig, setShowConfig] = useState("flex");
   const [isRequestSent, setIsRequestSent] = useState(false);
 
+if(true) {
+  
+}else{setShowConfig}
 
   const handleSendRequest = () => {
     // Simulate a server response
@@ -47,8 +50,7 @@ function App() {
     }
   };
 
-  const handleHeaderChange = (key: any, value: any) => {
-
+  const handleHeaderChange = (key: string, value: string) => {
 
     setHeaders((prev) => ({
       ...prev,
