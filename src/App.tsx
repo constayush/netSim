@@ -3,6 +3,7 @@ import clientIcon from "../public/clientsvg.svg";
 import serverIcon from "../public/server.svg";
 import settingIcon from "../public/settingIcon.svg";
 import { motion } from "framer-motion";
+import BlogPara from "./blogPara";
 
 function App() {
   const [request, setRequest] = useState("");
@@ -20,7 +21,7 @@ function App() {
     // Simulate a server response
     if (request) {
 
- setIsRequestSent(true)
+      setIsRequestSent(true)
 
 
       setTimeout(() => {
@@ -86,23 +87,23 @@ function App() {
 
 
         {/* Header SEction */}
-        <div className="flex flex-col justify-center items-center p-8 sm:p-[5rem] gap-10">
-          <h1 className="text-4xl sm:text-6xl text-center">HTTP Request-Response Simulator</h1>
-          <p className="text-lg text-left sm:text-center text-stone-200 max-w-xl sm:max-w-2xl">
-            This project is an interactive computer networking simulator that demonstrates how clients and servers communicate over a network.
+        <div className="heading flex flex-col justify-center items-center p-8 sm:p-[6rem] gap-4 sm:gap-10">
+          <h1 className="text-4xl sm:text-6xl text-center">How http:) works?</h1>
+          <p className="text-lg text-left sm:text-center text-stone-300 max-w-xl sm:max-w-2xl">
+            Interactive simulator that demonstrates how clients and servers communicate over a network.
             This project is made under Chai with Code's web dev cohort.
           </p>
         </div>
 
         {/* fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff*/}
 
-        <div className="flex justify-around items-center my-20">
+        <div className="animate-section  flex flex-col sm:flex-row justify-between sm:justify-around items-center my-2">
           {/* Client */}
           <motion.img
             src={clientIcon}
             className="w-[10rem] border p-4"
             alt="Client"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -80 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           />
@@ -111,7 +112,7 @@ function App() {
           {isRequestSent && (
             <motion.div
               className="bg-blue-500 absolute z-10 text-white px-4 py-2 rounded-full"
-              initial={{ x: -50, opacity: 0 }}
+              initial={{ x: -80, opacity: 0 }}
               animate={{ x: 50, opacity: 1 }}
               transition={{ duration: 1 }}
             >
@@ -150,17 +151,17 @@ function App() {
 
             <h1 className="text-4xl my-[4rem] w-full flex  justify-left items-center">Config your HTTP rquest</h1>
 
-            <div className="msg-section flex flex-col  justify-around items-center gap-8 ">
+            <div className="msg-section w-full flex flex-col flex-wrap justify-center items-center gap-5 sm:gap-8 ">
 
-              <div className={`req-input-main-line  flex flex-col items-center gap-8`}>
+              <div className={`req-input-main-line w-full flex flex-col justify-center items-center `}>
 
-                <div className=" flex gap-4 ">
+                <div className=" flex gap-2 sm:gap-4 ">
 
-                  <select className="w-fit border rounded cursor-pointer grad text-white" name="cars" id="cars">
-                    <option value="volvo">GET</option>
-                    <option disabled value="saab">POST</option>
-                    <option disabled value="mercedes">PUT</option>
-                    <option disabled value="audi">DELETE</option>
+                  <select className="w-fit border rounded cursor-pointer grad text-white">
+                    <option value="GET">GET</option>
+                    <option disabled aria-disabled value="POST">POST</option>
+                    <option disabled aria-disabled value="PUT">PUT</option>
+                    <option disabled aria-disabled value="DELETE">DELETE</option>
                   </select>
 
                   <input
@@ -171,9 +172,6 @@ function App() {
                     className="p-2 w-64 border rounded grad text-white"
                   />
 
-
-                  <button onClick={handleConfigClick}><img className="w-8 hover:rotate-45 transition-transform" src={settingIcon} /></button>
-
                   <button
                     onClick={handleSendRequest}
                     className="px-4 py-2 bg-blue-500 rounded hover:bg-blue-600"
@@ -182,12 +180,10 @@ function App() {
                   </button>
                 </div>
 
-
-
               </div>
 
               {/* grid response request */}
-              <div className={`request-response grid grid-cols-2 gap-4`}>
+              <div className={`request-response grid grid-cols-1 sm:grid-cols-2 gap-4`}>
 
 
                 <div className={`req-headers ${showConfig}  flex-col p-4 w-full border  gap-2 rounded grad text-white`}>
@@ -253,6 +249,48 @@ function App() {
           </div>
         </div>
 
+        <div className="blogSECtion my-[4rem]  w-full flex flex-col justify-center items-center ">
+
+         <div className="max-w-[64rem] min-h-[20rem] text-left "> 
+
+<BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
+
+You (the browser) ask the librarian (the website server) for a book (a webpage).
+You send a request: “Can I have the book on cats?” (HTTP request).
+The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information."/>
+
+<BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
+
+You (the browser) ask the librarian (the website server) for a book (a webpage).
+You send a request: “Can I have the book on cats?” (HTTP request).
+The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information."/>
+
+<BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
+
+You (the browser) ask the librarian (the website server) for a book (a webpage).
+You send a request: “Can I have the book on cats?” (HTTP request).
+The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information."/>
+
+
+<BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
+
+You (the browser) ask the librarian (the website server) for a book (a webpage).
+You send a request: “Can I have the book on cats?” (HTTP request).
+The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information."/>
+
+
+<BlogPara ques="What is http?" ans="HTTP (HyperText Transfer Protocol) is like the language your web browser and websites use to talk to each other." analogy="Imagine you’re in a library:
+
+You (the browser) ask the librarian (the website server) for a book (a webpage).
+You send a request: “Can I have the book on cats?” (HTTP request).
+The librarian checks and gives you the book or says, “Sorry, it’s not here” (HTTP response)." con="It’s that simple! HTTP is just the system they use to understand each other and exchange information."/>
+
+
+
+         </div>
+
+
+        </div>
 
       </div>
     </>
